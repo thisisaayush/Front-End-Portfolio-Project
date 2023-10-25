@@ -45,7 +45,7 @@ export default function Profile() {
                             </span>
                         </span>
                     </div>
-                    <div className='profile-optins'>
+                    <div className='profile-options'>
                         <button className='btn primary-btn'>
                             {" "}
                             Hire Me{" "}
