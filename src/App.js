@@ -1,5 +1,6 @@
-import Profile from './PortfolioContainer/Home/Profile';
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
+import PortfolioContainer from './PortfolioContainer/PortfolioContainer';
+
 import './App.css';
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
     //     I'm a 
     //   </h4>
     //     <span style={{fontweight: 'bold', color:'green', marginleft:'5px'}}>{typeEffect}</span> */}
-        <Profile></Profile>
+      <PortfolioContainer></PortfolioContainer>
     </div>
   );
 }

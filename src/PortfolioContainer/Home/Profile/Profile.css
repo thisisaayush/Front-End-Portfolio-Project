@@ -5,7 +5,7 @@
     justify-content: center;
     height: 10%;
     min-height: fit-content;
-    background-image: url('../../assests//Home/bg.jpg');
+    background-image: url('../../../assests/Home/bg.jpg');
 }
 
 .profile-parent {
@@ -68,7 +68,7 @@
 .profile-picture-background {
     height: 92%;
     width: 92%;
-    background-image: url("../../assests/Home/my_image.png");
+    background-image: url("../../../assests/Home/my_image.png");
     background-size: cover;
     border-radius: 50%;
     background-repeat: no-repeat;
