@@ -9,7 +9,7 @@ export default function Home() {
         <div className='home-containter'>
             <Header></Header>
             <Profile></Profile>
-            {/* <Footer></Footer> */}
+            <Footer></Footer>
         </div>
     );
 }
