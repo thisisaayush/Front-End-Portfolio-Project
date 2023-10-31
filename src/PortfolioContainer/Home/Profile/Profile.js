@@ -1,8 +1,15 @@
-import React from 'react'
-import Typical from 'react-typical'
-import './Profile.css'
+import React from 'react';
+import { useTypewriter, Cursor } from 'react-simple-typewriter';
+//import Typical from 'react-typical'
+import './Profile.css';
 
 export default function Profile() {
+    const [typeEffect] = useTypewriter({
+        words: ['Software Engineer', 'Full-Stack Developer', 'Team Player'],
+        loop: {},
+        typeSpeed: 100,
+        deleteSpeed: 40
+        });
     return (
         <div className='profile-container'>
             <div className='profile-parent'>
@@ -30,20 +37,12 @@ export default function Profile() {
                             {" "}
                             <h1>
                                 {" "}
-                                <Typical
-                                    loop={Infinity}
-                                    steps={[
-                                        "Software Engineer", 2000,
-                                        "Application Developer", 2000,
-                                        "Full-Stack Developer", 2000,
-                                    ]}>
-
-                                </Typical>
+                              <span style={{fontWeight: 'bold', marginLeft:'5px'}}>{typeEffect}</span>
                             </h1>
                             <span className='profile-role-tagline'>
                                 Diverse experience in building full-stack applications.
                             </span>
-                        </span>
+                        </span> 
                     </div>
                     <div className='profile-options'>
                         <button className='btn primary-btn'>
