@@ -1,6 +1,5 @@
 import React from 'react';
-import { useTypewriter, Cursor } from 'react-simple-typewriter';
-//import Typical from 'react-typical'
+import { useTypewriter, Cursor } from 'react-simple-typewriter'; 
 import './Profile.css';
 
 export default function Profile() {
