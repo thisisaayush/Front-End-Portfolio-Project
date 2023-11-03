@@ -34,7 +34,7 @@
 }
 
 .seperator-blob {
-    height: 10px;
+    height: 4px;
     width: 100%;
     position: absolute;
     display: flex;
@@ -42,7 +42,7 @@
 }
 
 .seperator-blob div {
-    width: 35px;
+    width: 40px;
     border-radius: 10px;
     background-color: var(--dark-orange);
 }

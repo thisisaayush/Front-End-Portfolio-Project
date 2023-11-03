@@ -2,7 +2,7 @@ import React, { userEffect } from 'react';
 import ScreenHeading from '../../utilities/ScreenHeading/ScreenHeading';
 import ScrollService from '../../utilities/ScrollService';
 import Animations from '../../utilities/Animations';
-
+import './AboutMe.css';
 export default function AboutMe(props) {
     let fadeInScreenHandler = (screen) => {
         if(screen.fadeScreen !== props.id)
@@ -12,15 +12,15 @@ export default function AboutMe(props) {
     const fadeInSubscription = ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
     const SCREEN_CONSTANTS = {
-        description : "In my four internships across various industries, I've worked with diverse teams on a variety of projects as a Software Developer, which has given me the ability to quickly adapt to new environments, technologies, and work cultures. I'm a skilled coder, debugger, and communicator with a strong understanding of tasks, team dynamics, and business requirements. I believe my experience would be a valuable asset to your team, as it aligns with the qualities you're seeking in a candidate for this position.",
+        description : "In my four internships across various industries, I've worked with diverse teams on a variety of projects as a Software Developer, which has given me the ability to quickly adapt to new environments, technologies, and work cultures. I'm a skilled coder, debugger, and communicator with a strong understanding of tasks, team dynamics, and business requirements.",
         highlights: {
             bullets: [
-                "Full-Stack Web & Mobile Development",
-                "Responsive and Interactive Front-End as per the Design",
-                "Java | Python | C# | JavaScript | Kotlin",
-                "Angular | React | ASP.NET | REST APIs | MVC",
-                "MSSQL Database | Microsoft Azure | Git",
-                "Test-Driven Development | Agile | Scrum | Pair Programming"
+                "- Full-Stack Web & Mobile Development",
+                "- Responsive and Interactive Front-End as per the Design",
+                "- Java | Python | C# | JavaScript | Kotlin",
+                "- Angular | React | ASP.NET | REST APIs | MVC",
+                "- MSSQL Database | Microsoft Azure | Git",
+                "- Test-Driven Development | Agile | Scrum | Pair Programming"
             ],
             heading: "Here are a Few Highlights:"
         }
