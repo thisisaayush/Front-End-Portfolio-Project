@@ -30,7 +30,7 @@
     font-size: 16px;
     cursor: pointer;
     font-weight: 600;
-}
+    }
 
 .header-hamburger {
     display: none;
@@ -79,7 +79,7 @@
     }
 
     .header-option-seperator {
-        margin: 0;
+        margin: 10px;
     }
 
     .selected-header-option {
