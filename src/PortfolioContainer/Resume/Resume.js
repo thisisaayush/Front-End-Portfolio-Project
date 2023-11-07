@@ -24,7 +24,7 @@ export default function Resume(props) {
                         <span>{ props.heading ? props.heading : ''}</span>
                         { props.fromDate && props.toDate ? (
                         <div className='heading-date'>
-                            {props.fromDate + "_" + props.toDate}
+                            {props.fromDate + "-" + props.toDate}
                         </div>
                         ): (
                         <div>
@@ -137,65 +137,80 @@ export default function Resume(props) {
                 <span className='resume-description-text'>
                 - I stretch my mental capacity to develope UI as per the given designs.             
                 </span>
-             </div>,
+            </div>
+        </div>,
         
-                <div className='resume-screen-container programming-skills-container' 
-                     key='programming-skills'>
-                     {programmingSkillsDetails.map((skill, index) =>(
-                    < div className='skill-parent' key={index}>
-                        <div className='heading-bullet'>
-                        </div>
-                            <span>{skill.skill}
-                            </span>
-                                <div className='skill-percentage'>
-                                    <div style={{width: skill.ratingPercentage + "%"}} 
-                                         className='active-percentage'>
-                                    </div>
-                                </div>
-                    </div>
-                    ))}
-                </div>,
-
-                <div className='resume-screen-container' key='projects'>
-                    {projectsDetails.map((projectsDetails, index) => (
-                    <ResumeHeading 
-                     key={index}
-                     heading={projectsDetails.title}
-                     subHeading={projectsDetails.subHeading}
-                     description={projectsDetails.description}
-                     fromDate={projectsDetails.duration.fromDate}
-                     toDate={projectsDetails.duration.toDate}
-                     />
-                     ))}
-                </div>,
-
-                <div className='resume-screen-container' key='interests'>
-                    <ResumeHeading
-                    heading='Teaching'
-                    description='Apart from being a tech enthusiast and a code writer, I also love to teach people what I know simply because I believe sharing.'
-                    />
-
-                    <ResumeHeading
-                    heading='Music'
-                    description="Listening to soothing music is something I can never compromise with, skimming through Spotify's pop songs charts is at times the best stress reliever that I can get my hands on."
-                    />
-
-                    <ResumeHeading
-                    heading='Competitive Gaming'
-                    description='I like to challenge my reflexes a lot while competing in football games, pushing the rand and having interactive gaming sessions excites me the most.'
-                    />
+        <div className='resume-screen-con0tainer programming-skills-container' 
+             key='programming-skills'>
+             {programmingSkillsDetails.map((skill, index) =>(
+            < div className='skill-parent' key={index}>
+                <div className='heading-bullet'>
                 </div>
+                <span>{skill.skill}</span>
+                <div className='skill-percentage'>
+                    <div style={{width: skill.ratingPercentage + "%"}} 
+                         className='active-percentage'>
+                    </div>
+                </div>
+            </div>
+        ))}
+        </div>,
+
+        <div className='resume-screen-container' key='projects'>
+             {projectsDetails.map((projectsDetails, index) => (
+            <ResumeHeading 
+             key={index}
+             heading={projectsDetails.title}
+             subHeading={projectsDetails.subHeading}
+             description={projectsDetails.description}
+             fromDate={projectsDetails.duration.fromDate}
+             toDate={projectsDetails.duration.toDate}
+            />
+        ))}
+        </div>,
+
+        <div className='resume-screen-container' key='interests'>
+            <ResumeHeading
+             heading='Teaching'
+             description='Apart from being a tech enthusiast and a code writer, I also love to teach people what I know simply because I believe sharing.'
+            />
+
+            <ResumeHeading
+             heading='Music'
+             description="Listening to soothing music is something I can never compromise with, skimming through Spotify's pop songs charts is at times the best stress reliever that I can get my hands on."
+            />
+
+            <ResumeHeading
+             heading='Competitive Gaming'
+             description='I like to challenge my reflexes a lot while competing in football games, pushing the rand and having interactive gaming sessions excites me the most.'
+            />
         </div>,
     ];
+    
+    // const handleCarousal = (index) => {
+    //     let offsetHeight = 360;
+    //     let newCarousalOffset = {
+    //         style: {transform: "translateY(" + index * offsetHeight * -1 + "px)"}
+    //         };
+    //     setCarousalOffSetStyle(newCarousalOffset);
+    //     setSelectedBulletIndex(index);
+    //     };
 
+     // This is new code
     const handleCarousal = (index) => {
-        let offsetHeight = 460;
-        let newCarousalOffset = {
-            style: {transform: "translateY(" + index * offsetHeight * -1 + "px)"}
-            };
+        const carouselContainer = document.querySelector('.resume-details-carousal');
+        const sections = document.querySelectorAll('.resume-screen-container');
+        const sectionHeight = sections[0].offsetHeight; // Assuming all sections have the same height
+      
+        const newCarousalOffset = {
+          style: {
+            transform: `translateY(${-index * sectionHeight}px)`,
+          },
+        };
+      
         setCarousalOffSetStyle(newCarousalOffset);
         setSelectedBulletIndex(index);
-        };
+      };
     
     const getBullets = () => {
         return resumeBullets.map((bullet, index) => (
@@ -208,7 +223,7 @@ export default function Resume(props) {
                      src={require(`../../assests/Resume/${bullet.logoSrc}`).default} 
                      alt=''
                     />
-                {bullet.label}    
+                <span className='bullet-label'>{bullet.label}</span>
             </div>
         ))
     }
