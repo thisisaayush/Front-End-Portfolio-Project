@@ -21,6 +21,9 @@ export default function Profile() {
                             <a href='#'>
                                 <i className="fa fa-google-plus-square" aria-hidden="true"></i>
                             </a>
+                            <a href='https://github.com/thisisaayush'>
+                                <i className="fa fa-github-square" aria-hidden="true"></i>
+                            </a>
                         </div>
                     
                         <div className="profile-details-name">
