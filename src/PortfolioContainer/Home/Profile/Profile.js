@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTypewriter, Cursor } from 'react-simple-typewriter'; 
 import './Profile.css';
+import ScrollService from '../../../utilities/ScrollService';
 
 export default function Profile() {
     const [typeEffect] = useTypewriter({
@@ -47,9 +48,9 @@ export default function Profile() {
                         </span> 
                     </div>
                     <div className='profile-options'>
-                        <button className='btn primary-btn'>
-                            {" "}
-                            Hire Me{" "}
+                        <button className='btn primary-btn' 
+                         onClick={() => ScrollService.scrollHandler.scrollToHireMe()}>
+                            Hire Me
                         </button>
                         <a href='Aayush Thakuri Resume.pdf' download='Aayush Thakuri Resume.pdf'>
                             <button className='btn highlighted-btn'>Get Resume</button>

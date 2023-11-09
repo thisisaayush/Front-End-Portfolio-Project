@@ -5,7 +5,10 @@ import load1 from '../../../src/images/load2.gif'
 import ScreenHeading from '../../utilities/ScreenHeading/ScreenHeading';
 import ScrollService from '../../utilities/ScrollService';
 import Animations from '../../utilities/Animations';
-import './ContactMe.css'
+import './ContactMe.css';
+import axios from 'axios';
+import { toast } from 'react-toastify';
+
 
 export default function ContactMe(props) {
 
@@ -40,6 +43,35 @@ export default function ContactMe(props) {
     }
 
     console.log(name);
+    const submitForm = async(e) => {
+        e.preventDefault();
+        try {
+            let data = {
+                name,
+                email,
+                message,
+            };
+            setBool(true)
+            const res = await axios.post('/contact', data);
+            if(name.length === 0 || email.length === 0 || message.length === 0) {
+                setBanner(res.data.msg);
+                toast.error(res.data.msg);
+                setBool(false);
+            }
+            else if(res.status === 200) {
+                setBanner(res.data.msg);
+                toast.success(res.data.msg);
+                setBool(false);
+
+                setName("");
+                setEmail("");
+                setMessage("");
+            }
+        }
+        catch (error) {
+            console.log(error);
+        }
+    };
 
     return (
         <div className='main-container' id={props.id || ''}>
@@ -67,7 +99,7 @@ export default function ContactMe(props) {
                         <h4> Send Your Email Here!</h4>
                         <img src={imgBack} alt='image not found'/>
                     </div>
-                    <form>
+                    <form onSubmit={submitForm}>
                         <p>{banner}</p>
                         <label htmlFor='name'>Name</label>
                         <input type='text'
@@ -90,6 +122,9 @@ export default function ContactMe(props) {
                         <div className='send-btn'>
                             <button type='submit'>
                                 send <i class="fa fa-paper-plane"/>
+                                {bool? (<b className='load>'>
+                                    {/* <img src={load1} alt='image not responding'/> */}
+                                    </b>):("")}
                             </button>
                         </div>
                     </form>

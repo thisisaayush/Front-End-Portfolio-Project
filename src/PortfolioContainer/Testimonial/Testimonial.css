@@ -4,7 +4,7 @@
     background-attachment: fixed;
     position: relative;
     z-index: -1;
-    background-color: aliceblue;
+    background-color: rgb(165, 203, 236);
 }
 
 .testimonial-section::before {
@@ -35,7 +35,7 @@
 }
 
 .testimonial-section .testi-item {
-    background-color: aliceblue;
+    background-color: rgb(165, 203, 236);
     border-radius: 45px 45px 45px 0;
 }
 

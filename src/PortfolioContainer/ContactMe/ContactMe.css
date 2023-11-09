@@ -10,12 +10,12 @@
     margin: 0 auto;
     flex-direction: column;
     justify-content: center;
-    background-color: #1f223f;
+    background-color: rgb(165, 203, 236);
 }
 
 
 .central-form h2 {
-    color: white;
+    color: black;
     letter-spacing: 0.2rem;
     margin-bottom: 20px;
 }
@@ -31,16 +31,16 @@
 }
 
 .img-back h4 {
-    color: white;
+    color: black;
     letter-spacing: 0.3rem;
     font-weight: 400;
     font-size: 18px;
-    opacity: 0.5;
 }
 
 .back-form .img-back img {
     width: 100%;
-    opacity: 0.5;
+    border-radius: 10px;
+    opacity: 1;
 }
 
 .central-form form {
@@ -79,4 +79,83 @@ form input, textarea {
     margin-bottom: 22px;
     border-radius: 10px;
     transition: 0.3s;
+}
+
+input:focus {
+    border: 2px solid rgba(30, 85, 250, .47);
+    background-color: white;
+}
+
+textarea:focus {
+    border: 2px solid rgba(30, 85, 250, .47);
+    background-color: white;
+}
+
+form button {
+    margin-top: 15px;
+    padding: 5px;
+    outline: none;
+    width: 160px;
+    border: 2px solid var(--dark-orange);
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: rgb(165, 203, 236);
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+form button:hover {
+    background-color: rgb(165, 203, 236);
+    transition: all ease 1s;
+    border: 2px solid rgb(165, 203, 236);
+}
+
+.img-back {
+    flex: 1;
+    align-self: center;
+    margin-right: 20px;
+}
+
+form {
+    flex: 0.9;
+}
+
+button .load {
+    width: 100%;
+}
+
+button .load img {
+    width: 20px;
+    color: green;
+}
+
+.col i {
+    padding: 7px;
+    color: black;
+    font-size: 25px;
+}
+
+.col i:hover {
+    transform: scale(1.2);
+}
+
+@media screen and (min-width: 940px) {
+    .back-form {
+        max-width: 1100px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+
+    .img-back {
+        flex: 1;
+        align-self: center;
+        margin-right: 20px;
+    }
+
+    form {
+        flex: 0.9;
+    }
 }
